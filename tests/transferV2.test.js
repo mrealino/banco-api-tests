@@ -1,5 +1,6 @@
 const { expect } = require('chai');
 const request = require('supertest');
+const { obterToken } = require('../helpers/login.js');
 require('dotenv').config();
 
 describe('Transfer testing', () => {
@@ -8,15 +9,7 @@ describe('Transfer testing', () => {
 
     it('V2: sucesso, 201 ', async () => {
       //Capturar o token
-      const responseLogin = await request(process.env.BASE_URL)
-              .post('/login')
-              .set('Content-Type', 'application/json')
-              .send({
-                'username': 'julio.lima',
-                'senha': '123456'
-              })
-
-      const token = responseLogin.body.token
+      const token = await obterToken('julio.lima', '123456');
 
       // Fazendo a transferência        
       const response = await request(process.env.BASE_URL)
@@ -36,16 +29,9 @@ describe('Transfer testing', () => {
     })
 
     it('V2: falha (valor < 10), 422 ', async () => {
- //Capturar o token
-      const responseLogin = await request(process.env.BASE_URL)
-              .post('/login')
-              .set('Content-Type', 'application/json')
-              .send({
-                'username': 'julio.lima',
-                'senha': '123456'
-              })
+      //Capturar o token
+      const token = await obterToken('julio.lima', '123456');
 
-      const token = responseLogin.body.token
 
       // Fazendo a transferência        
       const response = await request(process.env.BASE_URL)
