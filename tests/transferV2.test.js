@@ -6,10 +6,12 @@ require('dotenv').config();
 describe('Transfer testing', () => {
 
   describe('POST /transferencias', () => {
+    let token
+    beforeEach( async () => {
+      token = await obterToken('julio.lima', '123456');
+    })
 
     it('V2: sucesso, 201 ', async () => {
-      //Capturar o token
-      const token = await obterToken('julio.lima', '123456');
 
       // Fazendo a transferência        
       const response = await request(process.env.BASE_URL)
@@ -29,9 +31,6 @@ describe('Transfer testing', () => {
     })
 
     it('V2: falha (valor < 10), 422 ', async () => {
-      //Capturar o token
-      const token = await obterToken('julio.lima', '123456');
-
 
       // Fazendo a transferência        
       const response = await request(process.env.BASE_URL)
