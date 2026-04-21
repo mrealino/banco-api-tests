@@ -1,6 +1,6 @@
 # Banco API Tests
 
-## 📌 Overview
+## Overview
 
 This project contains automated tests for the REST API available at:
 https://github.com/juliodelimas/banco-api
@@ -8,14 +8,14 @@ https://github.com/juliodelimas/banco-api
 The goal is to validate API behavior, ensuring endpoints function
 correctly, reliably, and consistently.
 
-## 🎯 Objective
+## Objective
 
 -   Validate API endpoints (CRUD operations)
 -   Ensure response integrity and status codes
 -   Enable regression testing through automation
 -   Provide clear HTML reports for analysis
 
-## 🧰 Tech Stack
+## Tech Stack
 
 -   JavaScript (Node.js)
 -   Mocha (Test framework)
@@ -24,7 +24,7 @@ correctly, reliably, and consistently.
 -   Mochawesome (HTML reports)
 -   dotenv (Environment variables)
 
-## 📁 Project Structure
+## Project Structure
 
     ├── test/
     │   ├── login.test.js
@@ -36,7 +36,7 @@ correctly, reliably, and consistently.
     ├── package.json
     └── README.md
 
-## ⚙️ Environment Configuration
+## Environment Configuration
 
 Create a `.env` file in the root directory with the following content:
 
@@ -44,7 +44,7 @@ Create a `.env` file in the root directory with the following content:
 
 Replace the URL according to your environment.
 
-## ▶️ Running Tests
+## Running Tests
 
 ### Install dependencies
 
@@ -58,13 +58,13 @@ Replace the URL according to your environment.
 
     npm run test:report
 
-## 📊 Test Reports
+## Test Reports
 
 After execution, open the HTML report located in:
 
     /mochawesome/index.html
 
-## 📚 Documentation Links
+## Documentation Links
 
 -   Mocha: https://mochajs.org/
 -   Chai: https://www.chaijs.com/
@@ -72,7 +72,7 @@ After execution, open the HTML report located in:
 -   Mochawesome: https://github.com/adamgruber/mochawesome
 -   dotenv: https://github.com/motdotla/dotenv
 
-## 🚀 Notes
+## Notes
 
 -   Ensure the API is running before executing tests
 -   The `.env` file is required for proper configuration
